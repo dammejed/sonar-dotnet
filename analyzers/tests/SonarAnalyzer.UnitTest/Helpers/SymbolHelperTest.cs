@@ -248,6 +248,10 @@ namespace NS
             SymbolHelper.AnyAttributeDerivesFromAny(null, ImmutableArray.Create(KnownType.Void)).Should().BeFalse();
 
         [TestMethod]
+        public void AnyAttributeDerivesFromOrImplementsAny_WhenSymbolIsNull_ReturnsFalse() =>
+            SymbolHelper.AnyAttributeDerivesFromOrImplementsAny(null, ImmutableArray.Create(KnownType.Void)).Should().BeFalse();
+
+        [TestMethod]
         public void GetAttributesForKnownType_WhenSymbolIsNull_ReturnsEmpty() =>
             SymbolHelper.GetAttributes(null, KnownType.Void).Should().BeEmpty();
 
